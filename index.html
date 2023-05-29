@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLab</title>
+    <!--Linking the CSS file with the HTML file-->
+    <link rel="stylesheet" href="style.css">
+    <!--Adding the link of remix icons to add icons of our choice-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--Another link for adding icons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!--Adding google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <!--For adding animations on text-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+    <!--Header for the navigation bar-->
+    <header>
+        <!--Adding logo for the website-->
+        <a href="#" class="logo"><img src="5-PhotoRoom.png-PhotoRoom.png" alt="" width="90" height="90"></a>
+        <!--Making a navbar by making a ul list-->
+        <ul class="navbar">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="About.html">About us</a></li>
+            <li><a href="Courses.html">Catalog/a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>  
+        </ul>
+
+        <div class="main">
+            <a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
+            <a href="#">Register</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    <br>
+
+    <!--Making a section for the title-->
+    <section class="first">
+        <div class="blah">
+        <h1 class="animate__animated animate__pulse animate__repeat-2" id="MainHeading">CodeLab</h1>
+        <h3>Start your coding expeiments right now!</h3><br>
+        <button class="Startbtn">Get Started!</button>
+        </div>
+    </section>
+    <br>
+
+    <!--Making a second section for the sliding images-->
+    <section id="image-section">
+        <p>Start Learning</p>
+        <h1>Popular Courses</h1><br>
+        <div class="slide-container">
+          <img src="6.png" alt="Image 1" class="slide">
+          <img src="7.png" alt="Image 2" class="slide">
+          <img src="8.png" alt="Image 3" class="slide">
+          <img src="9.png" alt="Image 3" class="slide">
+          <img src="10.png" alt="Image 3" class="slide">
+        </div>
+    </section>
+    <br><br><br>
+    <section>
+        <div class="statistics">
+            <div class="counter">
+              <span class="count" data-target="500">0</span><br> Students Enrolled
+            </div>
+            <div class="counter">
+              <span class="count" data-target="800">0</span><br> Awarded Certificates
+            </div>
+            <div class="counter">
+              <span class="count" data-target="30">0</span><br> Countries
+            </div>
+          </div>
+    </section>
+
+    <!--Third section for images linked with list statements-->
+    <section class="Container reveal PolkaDots">
+        <div class="blah2">
+        </div>
+        <div class="Container reveal container">
+            <div>
+                <h2 style="font-size: 34px;" class="animate__animated animate__pulse animate__repeat-2">Land your first job <br>with our learning paths!</h2><br>
+              <ul>
+                <li id="statement1" class="statement" onclick="changeImage('FirstSlide.jpeg', 'statement1')">Interactive lessons</li>
+                <li id="statement2" class="statement" onclick="changeImage('SecondSlide.png', 'statement2')">Save money, save time</li>
+                <li id="statement3" class="statement" onclick="changeImage('ThirdSlide.png', 'statement3')">Build projects, get certified!</li>
+              </ul><br>
+              <button class="btn1">Join For Free</button>
+            </div>
+            
+            <!--Adding the original image-->
+            <div class="image">
+              <img id="image" src="FirstSlide.jpeg" alt="Image">
+            </div>
+          </div>
+    </section>
+
+    <!--Fourth section which contains various buttons-->
+    <section class="Container reveal Mobile">
+        <div class="cont">
+        <h2 style="font-size: 34px;" class="animate__animated animate__pulse animate__repeat-2">Try our Online Compilers</h2><br>
+        <p>We believe coding should be accessible to all. So we made our own compilers for web and mobile. And it's free!</p>
+        <br>
+        <section id="button-section">
+            <div class="button-container">
+              <!-- Buttons will be dynamically added here -->
+            </div>
+        </section>
+        </div>
+
+    </section>
+      
+    <!--jQuery code for the animation added on the buttons-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+        var sectionOffset = $('#button-section').offset().top;
+        var windowOffset = $(window).scrollTop() + $(window).height();
+
+        if (windowOffset > sectionOffset) {
+            $('.button-container').css('right', '0');
+        }
+        });
+    });
+    </script>
+     
+    <footer>
+        <div class='air air1'></div>
+        <div class='air air2'></div>
+        <div class='air air3'></div>
+        <div class='air air4'></div>
+    </footer>
+
+    <!--Linking the JS file with the HTML file-->
+    <script src="script.js"></script>
+</body>
+</html>
