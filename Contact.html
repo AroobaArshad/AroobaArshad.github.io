@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="transitions.css">
+    <!--Adding the link of remix icons to add icons of our choice-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--Another link for adding icons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!--Adding google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <!--For adding animations on text-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        :root{
+            --bg-color: #fff;
+            --text-color: #000;
+            --main-color: #b22496;
+        }
+
+        body{
+            min-height: 100vh;
+            background: var(--bg-color);
+            color: var(--text-color);
+
+        }
+
+        header{
+            background: var(--bg-color); /* Set the background color of the navbar */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 12%;
+            transition: all .50s ease;
+            border-bottom: 1px solid black;
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i{
+            color: var(--main-color);
+            font-size: 28px;
+            margin-right: 3px;
+        }
+
+        .logo span{
+            color: var(--text-color);
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+
+        .navbar{
+            display: flex;
+        }
+
+        .navbar a{
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 5px 0;
+            margin: 0px 30px;
+            transition: all .50 ease;
+        }
+
+        .navbar a:hover{
+            color: var(--main-color);
+            text-decoration: underline;
+            transition: all .50s ease;
+        }
+
+        .navbar a.active{
+            color: var(--main-color);
+        }
+
+        .main{
+            display: flex;
+            align-items: center;
+        }
+
+        .main a{
+            margin-right: 25px;
+            margin-left: 10px;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all .50s ease;
+        }
+
+        .user{
+            display: flex;
+            align-items: center;
+        }
+
+        .user i{
+            color: var(--main-color);
+            font-size: 28px;
+            margin-right: 7px;
+        }
+
+        .main a:hover{
+            color: var(--main-color);
+        }
+
+        #menu-icon{
+            font-size: 35px;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 10001;
+            display: none;
+        }
+
+
+        @media (max-width: 1280px){
+            header{
+                padding: 14px 2%;
+                transition: .2s;
+            }
+            .navbar a{
+                padding: 5px 0;
+                margin: 0px 20px;
+            }
+        }
+
+        @media (max-width: 1090px){
+            #menu-icon{
+                display: block;
+            }
+            .navbar{
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                width: 270px;
+                height: 29vh;
+                background: var(--main-color);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                border-radius: 10px;
+                transition: all .50 ease;
+            }
+            .navbar a{
+                display: block;
+                margin: 12px 0;
+                padding: 0px 25px;
+                transition: all .50s ease;
+            }
+            .navbar a:hover{
+                color: var(--text-color);
+                transform: translateY(5px);
+            }
+            .navbar a.active{
+                color: var(--text-color);
+            }
+            .navbar.open{
+                right: 2%; 
+            }
+        }
+
+        #us {
+            font-size: 50px;
+            position: absolute;
+            top: 290px;
+            left: 490px;
+        }
+
+        .Btn_Submit {
+            font-size: 18px;
+            padding: 6px;
+            border: 3px solid black;
+            box-shadow: -4px 4px black;
+            transition: all .40s ease;
+            background-color: bisque;
+        }
+
+        .Btn_Submit:hover {
+            box-shadow: -6px 6px black;
+            font-size: 20px;
+            transition: all .40s ease;
+            border-radius: 5px;
+        }
+
+        
+        /* customizable snowflake styling */
+        .snowflake {
+            color: #bd3bae;
+            font-size: 1em;
+            font-family: Arial;
+            text-shadow: 0 0 1px #000;
+        }
+
+        @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+        /* Demo Purpose Only*/
+        .demo {
+            font-family: 'Raleway', sans-serif;
+            color:#fff;
+            display: block;
+            margin: 0 auto;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .demo a{
+            font-family: 'Raleway', sans-serif;
+            color: #000;    
+        }
+
+        /************************************/
+        /*********Styling the Footer*********/
+        /************************************/
+
+        footer{
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            background: linear-gradient(to right, #8D1077, #b26fa6);
+            overflow: hidden;
+        }
+
+        /*Positioning the section that contains logos and their links*/
+        .wrapper {
+            margin-left: 50px;
+            margin-top: 35px;
+        }
+
+        /*Styling and positioning the buttons, giving them border radius and adding transitions*/
+        .wrapper .butttn {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            float: left;
+            overflow: hidden;
+            margin: 0 5px;
+            background: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-out;
+        }
+
+        /*Adding hovering effects*/
+        .wrapper .butttn:hover {
+            width: 180px;
+        }
+
+        /*Styling the icons and adding hover effects*/
+        .wrapper .butttn .icon {
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            text-align: center;
+            border-radius: 50px;
+            box-sizing: border-box;
+            line-height: 60px;
+            transition: all 0.3s ease-out;
+        }
+
+        /*Giving different colors to each logo respectively*/
+        .wrapper .butttn:nth-child(1):hover .icon {
+            background: #4267B2;
+        }
+
+        .wrapper .butttn:nth-child(2):hover .icon {
+            background: #1DA1F2;
+        }
+
+        .wrapper .butttn:nth-child(3):hover .icon {
+            background: linear-gradient(to right, rgb(239, 244, 101), rgb(239, 154, 44), rgb(199, 42, 196));
+        }
+
+        .wrapper .butttn:nth-child(4):hover .icon {
+            background: #333;
+        }
+
+        .wrapper .butttn:nth-child(5):hover .icon {
+            background: #ff0000;
+        }
+
+        .wrapper .butttn .icon i {
+            font-size: 25px;
+            line-height: 60px;
+            transition: all 0.3s ease-out;
+        }
+
+        .wrapper .butttn:hover .icon i {
+            color: #fff;
+        }
+
+        /*Styling the text*/
+        .wrapper .butttn span {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 60px;
+            margin-left: 4px;
+            transition: all 0.3s ease-out;
+        }
+
+        .wrapper .butttn:nth-child(1):hover span {
+            color: #4267B2;
+        }
+
+        .wrapper .butttn:nth-child(2):hover span {
+            color: #1DA1F2;
+        }
+
+        .wrapper .butttn:nth-child(3):hover span {
+            color: #E1306C;
+        }
+
+        .wrapper .butttn:nth-child(4):hover span {
+            color: #333;
+        }
+
+        .wrapper .butttn:nth-child(5):hover span {
+            color: #ff0000;
+        }
+
+        .weee:hover {
+            color: black;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: all 0.30s ease-out;
+        }
+
+        /*This is the CSS for the wavy animation at the end*/
+        /*I have used a background image and positioned it accordingly while adding the respective effects needed*/
+        footer .air{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+            background-size: 1000px 100px
+        }
+
+        /*There are a total of four waves and they are arranged seperately*/
+        /*They all have different z-indexes, opacities, animation time-delay and positions*/
+        footer .air.air1{
+            animation: wave 30s linear infinite;
+            z-index: 1000;
+            opacity: 1;
+            animation-delay: 0s;
+            bottom: 0;
+        }
+
+        footer .air.air2{
+            animation: wave2 15s linear infinite;
+            z-index: 999;
+            opacity: 0.5;
+            animation-delay: -5s;
+            bottom: 10px;
+        }
+
+        footer .air.air3{
+            animation: wave 30s linear infinite;
+            z-index: 998;
+            opacity: 0.2;
+            animation-delay: -2s;
+            bottom: 15px;
+        }
+
+        footer .air.air4{
+            animation: wave2 5s linear infinite;
+            z-index: 997;
+            opacity: 0.7;
+            animation-delay: -5s;
+            bottom: 20px;
+        }
+
+        /*Adding the necessary keyframes for the animation*/
+        @keyframes wave{
+        0%{
+        background-position-x: 0px; 
+        }
+        100%{
+        background-position-x: 1000px; 
+        }
+        }
+        @keyframes wave2{
+        0%{
+        background-position-x: 0px; 
+        }
+        100%{
+        background-position-x: -1000px; 
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="transition transition-3 is-active"></div>
+
+    <!--Header for the navigation bar-->
+    <header>
+        <!--Adding logo for the website-->
+        <a href="#" class="logo"><img src="5-PhotoRoom.png-PhotoRoom.png" alt="" width="90" height="90"></a>
+        <!--Making a navbar by making a ul list-->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About us</a></li>
+            <li><a href="Courses.html">Catalog</a></li>
+            <li><a href="Pricing.html">Pricing</a></li>
+            <li><a href="Contact.html" class="active">Contact</a></li>  
+        </ul>
+
+        <div class="main">
+            <a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
+            <a href="#">Register</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    <main>
+        <section class="contact">
+            <div style="margin-top: 50px;">
+                <img src="contact.png" alt="" width="80%" height="600px" style="position: absolute; left: 150px;">
+            </div>
+            <h1 id="us" class="animate__animated animate__pulse animate__repeat-2">Contact Us</h1>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <section class="bro">
+            <div class="snowflakes" aria-hidden="true">
+                <div class="snowflake">
+                ❅
+                </div>
+                <div class="snowflake">
+                ❅
+                </div>
+                <div class="snowflake">
+                ❆
+                </div>
+                <div class="snowflake">
+                ❄
+                </div>
+                <div class="snowflake">
+                ❅
+                </div>
+                <div class="snowflake">
+                ❆
+                </div>
+                <div class="snowflake">
+                ❄
+                </div>
+                <div class="snowflake">
+                ❅
+                </div>
+                <div class="snowflake">
+                ❆
+                </div>
+                <div class="snowflake">
+                ❄
+                </div>
+              </div>
+            <h1 style="font-size: 40px; text-align: center; border: 2px solid purple; border-radius: 0px; width: 45%; margin: auto; padding: 6px; box-shadow: 3px 3px purple;"><span style="color: rgb(218, 203, 74);">Get</span> in <span style="color: rgb(218, 203, 74);">touch</span> with <span style="color: rgb(218, 203, 74);">us</span></h1><br><br>
+            <form style="margin-left: 380px; font-size: 18px;">
+                Name: <input type="text" name="first_name"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Email: <input type="text" name="email"/>
+                <br>
+                <br>
+                Query Realated to: <br><br>
+                <select name="dropdown" style="padding: 5px; width: 500px; font-size: 18px;">
+                    <option value="Physics">Compiler Feedback</option>
+                    <option value="Maths">Error</option>
+                    <option value="Chemistry">Suggestion</option>
+                    <option value="Chemistry">Other</option>
+                </select>
+                <br><br>
+                Message: <br><br>
+                <textarea name="Description" cols="40" rows="1" style="padding: 10px; width: 500px; height: 150px; font-size: 16px;">Message...</textarea>
+            </form><br>
+            <button class="Btn_Submit" style="position: absolute; left: 600px;">Submit</button>
+        </section><br><br><br><br><br>
+    </main>
+
+    <footer>
+
+        <!--Adding the logo of my website-->
+        <img src="5-PhotoRoom.png-PhotoRoom.png" alt="" width="100px" height="100px" style="margin-top: 35px; margin-left: 60px;">
+        <!--Adding a small paragraph and wrapping it in a div section-->
+        <div style="margin-top: 15px; margin-left: 60px;">
+          <p style="font-size: 19px; width: 30%; color: #fff;">At CodeLab, we teach, inspire and build the future you deserve. Join the millions learning to code with CodeLab for free.</p>
+        </div>
+  
+        <!--Making a div for the links and logos-->
+        <div class="wrapper">
+          <!--Making a seperate div for the buttons and icons-->
+          <div class="butttn">
+            <div class="icon"><i class="fab fa-facebook-f"></i></div>
+            <span>Facebook</span>
+          </div>
+          <div class="butttn">
+            <div class="icon"><i class="fab fa-twitter"></i></div>
+            <span>Twitter</span>
+          </div>
+          <div class="butttn">
+            <div class="icon"><i class="fab fa-instagram"></i></div>
+            <span>Instagram</span>
+          </div>
+          <div class="butttn">
+            <div class="icon"><i class="fab fa-github"></i></div>
+            <span>Github</span>
+          </div>
+          <div class="butttn">
+            <div class="icon"><i class="fab fa-youtube"></i></div>
+            <span>YouTube</span>
+          </div>
+        </div>
+  
+        <!--Making several divs for the rest of the information and positioning them accordingly-->
+        <div class="f2" style="margin-right: 200px;">
+          <h2 style="position: absolute; top: 80px; left: 495px; color: #fff; font-size: 28px;">Company</h2>
+          <ul style="position: absolute; bottom: 230px; left: 500px; color: #fff; font-size: 18px;">
+            <li class="weee">About</li>
+            <li class="weee">Contact</li>
+            <li class="weee">Careers</li>
+            <li class="weee">Catalog</li>
+            <li class="weee">Affiliates</li>
+          </ul>
+        </div>
+  
+        <div>
+          <h2 style="position: absolute; top: 80px; left: 735px; color: #fff; font-size: 28px;">Community</h2>
+          <ul style="position: absolute; top: 140px; left: 740px; color: #fff; font-size: 18px;">
+            <li class="weee">Forums</li>
+            <li class="weee">Chapters</li>
+            <li class="weee">Events</li>
+            <li class="weee">Code Crew</li>
+            <li class="weee">Discord</li>
+          </ul>
+        </div>
+  
+        <div>
+          <h2 style="position: absolute; top: 80px; left: 1005px; color: #fff; font-size: 28px;">Plans</h2>
+          <ul style="position: absolute; top: 140px; left: 1005px; color: #fff; font-size: 18px;">
+            <li class="weee">Paid Memberships</li>
+            <li class="weee">For Students</li>
+            <li class="weee">Business Solutions</li>
+          </ul>
+        </div>
+        
+        <!--Making divs for creating the wave animation at the end of the footer-->
+        <!--Giving them class names so that we can style them in the stylesheet accordingly-->
+  
+        <div class='air air1'></div>
+        <div class='air air2'></div>
+        <div class='air air3'></div>
+        <div class='air air4'></div>
+  
+    </footer>
+    <script>
+        window.onload = () => {
+        const transition_el = document.querySelector('.transition');
+        const anchors = document.querySelector('a')
+
+        setTimeout (() => {
+            transition_el.classList.remove('is-active');
+        }, 500);
+
+        for (let i = 0; i < anchors.length; i++) {
+            const anchor = anchors(i); 
+
+            anchor.addEventListener('click', e => {
+            e.preventDefault();
+            let target = e.target.href;
+
+            transition_el.classList.add('is-active');
+
+            setTimeout (() => {
+                window.location.href = target;
+            }, 500);
+            });
+        }
+        }
+    </script>
+
+</body>
+</html>
