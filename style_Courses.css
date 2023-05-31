@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+  
+:root{
+    --bg-color: #fff;
+    --text-color: #000;
+    --main-color: #b22496;
+}
+
+body {
+    position: relative;
+    height: 100%;
+  }
+body{
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+
+}
+
+header{
+    background: var(--bg-color); /* Set the background color of the navbar */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 12%;
+    transition: all .50s ease;
+    border-bottom: 1px solid black;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo i{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 3px;
+}
+
+.logo span{
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50 ease;
+}
+
+.navbar a:hover{
+    color: var(--main-color);
+    text-decoration: underline;
+    transition: all .50s ease;
+}
+
+.navbar a.active{
+    color: var(--main-color);
+}
+
+.main{
+    display: flex;
+    align-items: center;
+}
+
+.main a{
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+
+.user i{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.main a:hover{
+    color: var(--main-color);
+}
+
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+
+@media (max-width: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 1090px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        background: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50 ease;
+    }
+    .navbar a{
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover{
+        color: var(--text-color);
+        transform: translateY(5px);
+    }
+    .navbar a.active{
+        color: var(--text-color);
+    }
+    .navbar.open{
+        right: 2%; 
+    }
+}
+
+.swiper {
+    width: 85%;
+    height: 45%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#Typing {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-family: monospace;
+}
+
+.Catalog {
+    position: relative;
+    background: url(Catalog.png);
+    margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
+    background-size: 100% auto;
+    height: 85vh;
+}
+
+/* Styling the 'Take Quiz' button and adding animation plus hover effects */
+.fade-in {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    background-color: #FFEEA4;
+    animation: fadeInAnimation 0.5s ease-in 5s forwards;
+    opacity: 0;
+    padding: 12px;
+    font-size: 20px;
+    border: 2px solid black;
+    box-shadow: -4px 4px black;
+    margin-top: 10px;
+    transition: all .40s ease;
+}
+
+.fade-in:hover {
+    box-shadow: -9px 9px black;
+    transition: all .40s ease;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.Course{
+    background-image: linear-gradient(rgb(202, 251, 215), rgb(138, 228, 135));
+    padding-top: 50px;
+    margin-bottom: 0;
+}
+
+.Popular {
+    font-size: 40px;
+    text-align: center;
+    background-image: linear-gradient(rgb(53, 219, 103), rgb(184, 250, 204));
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 8px 8px black;
+    font-family: 'Lato', sans-serif;
+}
+
+.Popular:hover {
+    background-image: linear-gradient(rgb(184, 250, 204), rgb(53, 219, 103));
+}
+
+.Career {
+    font-size: 40px;
+    text-align: center;
+    background-image: linear-gradient(#171765, #6565c3);
+    width: 70%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 8px 8px black;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+.Career:hover {
+    background-image: linear-gradient(#6565c3, #171765);
+}
+
+/* This class is created through the JS code that helps in animating the sections */
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.Paths {
+    background-image: linear-gradient(rgb(185, 185, 255), rgb(51, 51, 120));
+    padding-top: 50px;
+    margin-top: 0;
+    padding-bottom: 60px;
+}
+
+/* Adding fade-bottom animation so the fourth section appears from the bottom */
+.active.Paths {
+    animation: fade-bottom 1s ease-in;
+}
+@keyframes Paths {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.mo {
+    margin: 65px;
+    border: 5px solid black;
+    border-radius: 30px;
+    box-shadow: 10px 10px black;
+    transition: all .50s ease; 
+    padding: 8px;
+}
+
+.mo:hover {
+    border-radius: 0;
+    transition: all.50s ease;
+    border: 6px solid rgb(2, 2, 104);
+    box-shadow: 16px 16px rgb(52, 52, 81);
+    padding: 4px;
+}
+
+.offset {
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    padding: 12px;
+    font-size: 20px;
+    position: absolute;
+    top: 1110px;
+    left: 550px;
+    transition: all .80s ease;
+    margin: 5px;
+}
+
+.offset:hover{
+    border-radius: 0;
+    margin: -10px;
+    background-color: #7c7cae;
+    transition: all .80s ease;
+    box-shadow: 6px 6px black;
+}
+
+/************************************/
+/*********Styling the Footer*********/
+/************************************/
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: linear-gradient(to right, #8D1077, #b26fa6);
+    overflow: hidden;
+}
+
+/*Positioning the section that contains logos and their links*/
+.wrapper {
+    margin-left: 50px;
+    margin-top: 35px;
+}
+
+/*Styling and positioning the buttons, giving them border radius and adding transitions*/
+.wrapper .butttn {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    float: left;
+    overflow: hidden;
+    margin: 0 5px;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+/*Adding hovering effects*/
+.wrapper .butttn:hover {
+    width: 180px;
+}
+
+/*Styling the icons and adding hover effects*/
+.wrapper .butttn .icon {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+/*Giving different colors to each logo respectively*/
+.wrapper .butttn:nth-child(1):hover .icon {
+    background: #4267B2;
+}
+
+.wrapper .butttn:nth-child(2):hover .icon {
+    background: #1DA1F2;
+}
+
+.wrapper .butttn:nth-child(3):hover .icon {
+    background: linear-gradient(to right, rgb(239, 244, 101), rgb(239, 154, 44), rgb(199, 42, 196));
+}
+
+.wrapper .butttn:nth-child(4):hover .icon {
+    background: #333;
+}
+
+.wrapper .butttn:nth-child(5):hover .icon {
+    background: #ff0000;
+}
+
+.wrapper .butttn .icon i {
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .butttn:hover .icon i {
+    color: #fff;
+}
+
+/*Styling the text*/
+.wrapper .butttn span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 4px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .butttn:nth-child(1):hover span {
+    color: #4267B2;
+}
+
+.wrapper .butttn:nth-child(2):hover span {
+    color: #1DA1F2;
+}
+
+.wrapper .butttn:nth-child(3):hover span {
+    color: #E1306C;
+}
+
+.wrapper .butttn:nth-child(4):hover span {
+    color: #333;
+}
+
+.wrapper .butttn:nth-child(5):hover span {
+    color: #ff0000;
+}
+
+.weee:hover {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.30s ease-out;
+}
+
+/*This is the CSS for the wavy animation at the end*/
+/*I have used a background image and positioned it accordingly while adding the respective effects needed*/
+footer .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+}
+
+/*There are a total of four waves and they are arranged seperately*/
+/*They all have different z-indexes, opacities, animation time-delay and positions*/
+footer .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+footer .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+footer .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+footer .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+/*Adding the necessary keyframes for the animation*/
+@keyframes wave{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: 1000px; 
+}
+}
+@keyframes wave2{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: -1000px; 
+}
+}
+
+  
