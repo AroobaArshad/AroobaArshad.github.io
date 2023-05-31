@@ -7,6 +7,7 @@
     <title>CodeLab</title>
     <!--Linking the CSS file with the HTML file-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transitions.css">
     <!--Adding the link of remix icons to add icons of our choice-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <!--Another link for adding icons-->
@@ -21,6 +22,7 @@
 
 </head>
 <body>
+    <div class="transition transition-2 is-active"></div>
     <!--Header for the navigation bar-->
     <header>
         <!--Adding logo for the website-->
@@ -29,9 +31,9 @@
         <ul class="navbar">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="About.html">About us</a></li>
-            <li><a href="Courses.html">Catalog/a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>  
+            <li><a href="Courses.html">Catalog</a></li>
+            <li><a href="Pricing.html">Pricing</a></li>
+            <li><a href="Contact.html">Contact</a></li>  
         </ul>
 
         <div class="main">
@@ -59,12 +61,16 @@
         <div class="slide-container">
           <img src="6.png" alt="Image 1" class="slide">
           <img src="7.png" alt="Image 2" class="slide">
-          <img src="8.png" alt="Image 3" class="slide">
-          <img src="9.png" alt="Image 3" class="slide">
-          <img src="10.png" alt="Image 3" class="slide">
+          <a href="CSS.html"><img src="8.png" alt="Image 3" class="slide"></a>
+          <a href="JavaScript.html"><img src="9.png" alt="Image 3" class="slide"></a>
+          <a href="Courses.html"><img src="10.png" alt="Image 3" class="slide"></a>
         </div>
     </section>
+
     <br><br><br>
+
+    <!--This section is for displaying the number of students, awarded certificates and countries-->
+    <!--JavaScript is added to give this section the counting animation effect-->
     <section>
         <div class="statistics">
             <div class="counter">
@@ -132,13 +138,83 @@
     </script>
      
     <footer>
-        <div class='air air1'></div>
-        <div class='air air2'></div>
-        <div class='air air3'></div>
-        <div class='air air4'></div>
+
+      <!--Adding the logo of my website-->
+      <img src="5-PhotoRoom.png-PhotoRoom.png" alt="" width="100px" height="100px" style="margin-top: 35px; margin-left: 60px;">
+      <!--Adding a small paragraph and wrapping it in a div section-->
+      <div style="margin-top: 15px; margin-left: 60px;">
+        <p style="font-size: 19px; width: 30%; color: #fff;">At CodeLab, we teach, inspire and build the future you deserve. Join the millions learning to code with CodeLab for free.</p>
+      </div>
+
+      <!--Making a div for the links and logos-->
+      <div class="wrapper">
+        <!--Making a seperate div for the buttons and icons-->
+        <div class="butttn">
+          <div class="icon"><i class="fab fa-facebook-f"></i></div>
+          <span>Facebook</span>
+        </div>
+        <div class="butttn">
+          <div class="icon"><i class="fab fa-twitter"></i></div>
+          <span>Twitter</span>
+        </div>
+        <div class="butttn">
+          <div class="icon"><i class="fab fa-instagram"></i></div>
+          <span>Instagram</span>
+        </div>
+        <div class="butttn">
+          <div class="icon"><i class="fab fa-github"></i></div>
+          <span>Github</span>
+        </div>
+        <div class="butttn">
+          <div class="icon"><i class="fab fa-youtube"></i></div>
+          <span>YouTube</span>
+        </div>
+      </div>
+
+      <!--Making several divs for the rest of the information and positioning them accordingly-->
+      <div class="f2" style="margin-right: 200px;">
+        <h2 style="position: absolute; top: 80px; left: 495px; color: #fff; font-size: 28px;">Company</h2>
+        <ul style="position: absolute; bottom: 230px; left: 500px; color: #fff; font-size: 18px;">
+          <li class="weee">About</li>
+          <li class="weee">Contact</li>
+          <li class="weee">Careers</li>
+          <li class="weee">Catalog</li>
+          <li class="weee">Affiliates</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 style="position: absolute; top: 80px; left: 735px; color: #fff; font-size: 28px;">Community</h2>
+        <ul style="position: absolute; top: 140px; left: 740px; color: #fff; font-size: 18px;">
+          <li class="weee">Forums</li>
+          <li class="weee">Chapters</li>
+          <li class="weee">Events</li>
+          <li class="weee">Code Crew</li>
+          <li class="weee">Discord</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 style="position: absolute; top: 80px; left: 1005px; color: #fff; font-size: 28px;">Plans</h2>
+        <ul style="position: absolute; top: 140px; left: 1005px; color: #fff; font-size: 18px;">
+          <li class="weee">Paid Memberships</li>
+          <li class="weee">For Students</li>
+          <li class="weee">Business Solutions</li>
+        </ul>
+      </div>
+      
+      <!--Making divs for creating the wave animation at the end of the footer-->
+      <!--Giving them class names so that we can style them in the stylesheet accordingly-->
+
+      <div class='air air1'></div>
+      <div class='air air2'></div>
+      <div class='air air3'></div>
+      <div class='air air4'></div>
+
     </footer>
 
     <!--Linking the JS file with the HTML file-->
     <script src="script.js"></script>
+
 </body>
 </html>
