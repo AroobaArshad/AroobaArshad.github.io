@@ -162,7 +162,7 @@ header{
 /* Setting the background image for the top part of the website */
 .first {
     position: relative;
-    background: url(Background.png);
+    background: url(../images/Background.png);
     margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
     background-size: 100% auto;
     height: 85vh;
@@ -187,7 +187,7 @@ header{
     font-size: 16px;
     padding: 15px;
     border: 2px solid black;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 4px 4px black;
     transition: all .70s ease;
 }
@@ -305,7 +305,7 @@ header{
 /* Adding a background image on the third section */
 .PolkaDots {
     position: relative;
-    background: url(purple.png);
+    background: url(../images/purple.png);
     margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
     background-size: cover;
     height: 83vh;
@@ -377,7 +377,7 @@ header{
 /* Adding background image at the fourth section */
 .Mobile{
     position: relative;
-    background: url(again-transformed.png);
+    background: url(../images/again-transformed.png);
     margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
     background-size: cover;
     height: 110vh;
@@ -472,7 +472,10 @@ header{
     opacity: 1;
 }
 
-/************* Second page *************/
+/****************************************
+               Second page 
+*****************************************/
+
 /*************** ABOUT US ***************/
 
 /***** Styling the first section *****/
@@ -488,7 +491,7 @@ header{
 /* Adding background image at the first section */
 .Top {
     position: relative;
-    background: url(About\ Us.png);
+    background: url(../images/About\ Us.png);
     margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
     background-size: 100% auto;
     height: 85vh;
