@@ -162,9 +162,10 @@ header{
 /* Setting the background image for the top part of the website */
 .first {
     position: relative;
-    background: url(../images/Background.png);
+    background-image: url(../images/Background.png);
     margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
     background-size: 100% auto;
+    background-repeat: no-repeat;
     height: 85vh;
 }
   
@@ -174,6 +175,7 @@ header{
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
+    width: 35%;
 }
 
 #MainHeading {
