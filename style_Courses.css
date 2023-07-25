@@ -214,7 +214,7 @@ header{
 
 .Catalog {
     position: relative;
-    background: url(Catalog.png);
+    background: url(../images/Catalog.png);
     margin-top: 100px; /* Adjust the margin-top to leave space for the navbar */
     background-size: 100% auto;
     height: 85vh;
